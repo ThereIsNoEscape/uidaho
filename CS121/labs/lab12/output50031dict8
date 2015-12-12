@@ -1,0 +1,21 @@
+Script started on Thu 23 Apr 2015 08:40:02 PM PDT
+[?1034hbash-4.1$ ./a.out
+Found: "phase" in the file.
+"derp" not found in the file.
+Found: "abbot" in the file.
+Found: "acrobat" in the file.
+"juice" not found in the file.
+"ice" not found in the file.
+"flying" not found in the file.
+Found: "cesspool" in the file.
+"twitch" not found in the file.
+Found: "prime" in the file.
+
+Number of Buckets: 50031
+Number of Empty Buckets: 27888
+Smallest Bucket Size: 1
+Largest Bucket Size: 6
+bash-4.1$ exit
+exit
+
+Script done on Thu 23 Apr 2015 08:40:07 PM PDT

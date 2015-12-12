@@ -1,0 +1,102 @@
+Jonathan Buch
+September 8th, 2015
+CS 270
+Assignment #1
+
+Compliled, Not Optimized
+------------------------
+
+
+Size of Each Function(bytes):
+
+main:		41
+bubblesort:	104
+quicksort:	190
+insertionsort:	126
+swap:		67
+swapv2:		67
+
+
+Address of Each Function:
+
+main:		0000000000400474
+bubblesort:	00000000004004a0
+quicksort:	000000000040054c
+insertionsort:	0000000000400650
+swap:		0000000000400508
+swapv2:		000000000040060a
+
+
+Entry Point Name and Location:
+
+_start: 	0000000000400390
+
+
+Subroutines of stdio:
+
+printf@@GLIBC_2.2.5:
+	Size:	0
+	Address:0000000000000000
+	Offset:	000000600d48
+
+ 
+Location of Data Files:
+
+.data:		0000000000600b20
+.bss:		0000000000600be8
+
+
+Size of Data Files:
+
+.data:		0000c8
+.bss:		000010
+
+--------------------------------
+
+
+Compiled, Optimized
+-------------------
+
+Size of Each Function(bytes):
+
+main:		44
+bubblesort:	110
+quicksort:	150
+insertionsort:	101
+swap:		24
+swapv2:		24
+
+
+Address of Each Function:
+
+main:		0000000000400474
+bubblesort:	0000000000400520
+quicksort:	00000000004005a8
+insertionsort:	00000000004004a0
+swap:		0000000000400508
+swapv2:		0000000000400590
+
+
+Entry Point Name and Location:
+
+_start: 	0000000000400390
+
+
+Subroutines of stdio:
+
+None, accidentally deleted the main.c file the first time because
+I had used -o instead of -O and had to recreate main. I didn't put
+the printf() in again becuase I had used them beforehand to test
+my functions.
+ 
+
+Location of Data Files:
+
+.data:		0000000000600ac0
+.bss:		0000000000600b88
+
+
+Size of Data Files:
+
+.data:		0000c8
+.bss:		000010

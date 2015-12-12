@@ -1,0 +1,29 @@
+Script started on Thu 29 Jan 2015 11:06:43 AM PST
+[?1034hbash-4.1$ ./a.out 1 5 15 20
+Arguments Entered: 
+-------------------
+./a.out
+1
+5
+15
+20
+
+Conversion of Arguments 2 and 3: 
+---------------------------------
+Argument 2 becomes an Interger
+Argument 3 becomes a Float
+
+Calculations: 
+--------------
+5 * 15
+75
+5 + 15
+20
+5 - 15
+-10
+5 / 15
+0.333333
+bash-4.1$ exit
+exit
+
+Script done on Thu 29 Jan 2015 11:06:59 AM PST

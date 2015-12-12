@@ -1,0 +1,60 @@
+Jonathan Buch
+Section #1
+Lab #6
+March 3rd, 2015
+Program Design
+
+Methods and Variables Needed:
+
+For this program, I am going to need 5 total methods: ShowHeader,
+max, min, average, and standard deviation. For max, min, and 
+average, I am going to need to pass two variables. They are going
+to be used to compare the values to find the max and min. For
+average, the two variables it needs to take are the sum of the
+values as well as the number of values total. Standard Deviation
+only needs to take one number, the variance of the data, to
+square root it. Since the variance is not required to be put into
+a function, it is going to be implemented in the ShowHeader()
+function. Also, since the program doesn't specify other than
+output going to the ShowHeader() function, I am going to add the 
+input file there to make the i/o located in the same place.
+There are going to be a variety of variables needed for this program,
+the most obvious are the two file pointers with two character arrays
+to store the name of the input and output files. I am also going to
+need a double variable called "value" to store the data as it is read
+in from a file. For the methods, extra variables are needed. For max
+and min, a second value variable is needed to compare two of the
+values. Max will need to be initialized to a number so low that
+nothing can be a value lower and vice versa for min. This is because
+initializing that variable to 0 could cause problems as 0 could be
+the min or max of the data values. Standard deviation is going to
+require two new variables, variance and final. Variance (vari) is
+going to be an array to store the the values of the file for access
+when it leaves the loop. Once it leaves the loop, vari[100] can be
+used with a while loop to get the variance of the data. The variance
+is then stored as final, to be sent to the function for standard
+deviation. Lastly, my program is going to need to output to the file:
+the average, max, min, and standard deviation via the fprintf
+function with the output file pointer. At the very end of 
+ShowHeader(), I'll need to close the input and output files.
+
+Method Descriptions:
+
+void ShowHeader(FILE*, FILE*, char[], char[], double) - takes two 
+file pointers, two character arrays, and a double. It opens both
+files, does the necessary calculations outputs the results to an
+output file, then closes both files
+
+double max(double, double) - takes two doubles to compare them to
+find out which one is larger than the other
+
+double min(double, double) - same as above, but finds and returns 
+the smaller of the two values
+
+double average(double, double) - takes two doubles, the sum and
+count, and divides the two to return the average of the data
+
+double stdDev(double) - takes a double (variance) and returns
+the square root  
+
+

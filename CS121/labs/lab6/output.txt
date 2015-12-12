@@ -1,0 +1,7 @@
+Program by Jonathan Buch
+File Name: output.txt
+
+Average: 0.198060
+Maximum: 2.264230
+Minimum: -1.952576
+Standard Deviation: 1.402538

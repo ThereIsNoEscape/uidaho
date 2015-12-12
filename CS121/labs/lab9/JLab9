@@ -1,0 +1,36 @@
+Jonathan Buch
+Section #1
+Lab #9
+April 1st, 2015
+
+Journal
+
+Difficulties/Time Required:
+
+I found this lab to be moderately more difficult than the labs previous
+as this one returned to stacks. The first part of this lab, creating a Stack
+class without a linked list class was slightly difficult, but by far the
+easiest part of the lab. The second function, joining the lists by way of
+"zipping" was easily the hardest part of the lab. This was because I had 
+trouble trying to figure out how to store linked lists in order to in a
+way that would make creating a new list easier. At first I tried to create
+a new list straight from the original lists, but I was having trouble getting
+the nodes to link correctly. After reviewing my notes, I figured out that
+I could Pop directly from the original stacks and Push those values. It took 
+me about 2 hours and 30 minutes to create the joining function. 
+The RemoveNeg() function was a little bit tricky at first, but by using
+an array, I found that it became a trivial task. The second function took 
+around an hour to make sure the output was correct. In total, this lab took 
+me about 4 hours to fully complete.  
+
+Lessons Learned:
+
+This lab helped me learn that arrays are very useful in storing data from
+linked lists. In fact, this helped me reailize that anything thing involving
+singly-linked lists could be represented in an array. Although I opted for
+just direct transfer from the original stacks to a joined one, I see the 
+benefit of using arrays as you dont lose your original list. The lab
+also helped me learn how to create a stack class without the use of a linked
+list stucture working in the background. Finally, I learned that working around
+setbacks such as not being able to use objects can be a little demotivating at
+first, but helped me learn different ways to solve problems.

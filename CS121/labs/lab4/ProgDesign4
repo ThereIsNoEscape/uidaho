@@ -1,0 +1,29 @@
+Jonathan Buch
+Section #1
+Lab #4
+February 15th 2015
+
+Classes and Methods Needed:
+
+First and foremost, I am going to need to figure out how to get a string of input from the
+user and then split that string into multiple substrings that can all be accessed by the
+program. Then, I am going to need to use some of the code that Bolden gave use to create
+the LinkedList class/files. After that is complete. I need to create 3 more files, the
+test file, and the stack header file and implementation file. Once all that is done, I can
+move on to creating the actual functions needed for the lab. These are +,-,*,/,sq,sqrt,
+dup,swap,ps, and quit. Since this program needs to loop continuously, I need to have a 
+flag which is changed upon input of the quit keyword. After all of that is completed, I
+need to create the correct output as shown in the lab. This will require a change to the
+linkedlist class for it to print correctly. After all of the functions have been
+implemented and work correctly under normal conditions, I will need to add error checking
+for each of the functions. Specifically, I need ot check if there is enough items on the
+stack to perform the operation.
+
+Foreseen Problems( Problems that may occur ):
+
+I feel that the hardest part of this lab is figuring out how to split a string as I have
+not done this before. Other problems that could occur are problems regarding error 
+checking of the functions and setting the flag correctly when the program needs to 
+terminate. There may be some problems when implementing the output, but I don't think that
+will be too hard to fix. Other than that, I don't expect oo many other problems when I
+create this code. 

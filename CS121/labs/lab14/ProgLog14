@@ -1,0 +1,83 @@
+Jonathan Buch
+Section #1
+Lab #14
+May 7th, 2015
+
+Programming Log
+
+Members:
+
+int size:
+
+Size of the largest array.
+
+int store[]:
+
+This array is used as a temporary to store the original value of the array
+
+int temp1[]:
+
+This array is used to store the values in the data file that was inputted
+
+int swapcount:
+
+This variable is used to count the number of swaps that happen in
+each of the separate 
+
+int comparisons:
+
+This variable is used to count the number of comparisons that happen in each
+sorting function.
+
+Methods:
+
+void Quicksort( int a[], int first, int last, int &swapcount, int &comparisons );
+
+This function uses another function, Pivot, to sort based on
+a selected pivot element of the array. It then sorts the data
+in the array by the selected pivot value if it is higher or lower
+than itself. Quicksort than uses recursion to find all of the data
+around the pivot value.
+
+int Pivot( int a[], int first, int last, int &swapcount, int &comparisons );
+
+This function is used within quicksort to do the actual swaps required
+by the quicksort function.
+
+void SelectionSort( int a[], int nElements, int &swapcount, int &comparisons );
+
+This function uses the IndexOfSmallest to find the smallest value's index
+in order to swap the value with the previous value if it is smaller than
+the iteration in the for loop. 
+
+int IndexOfSmallest( int a[], int iStart, int iEnd, int &comparisons );
+
+This function is used with the SelectionSort function. This function finds
+and returns the smallest value's index in the passed in array.
+
+void Swap( int &v1, int &v2 );
+
+Swaps two values.
+
+void Merge( int a[], int firstLeft, int lastLeft, int firstRight, int lastRight, int &swapcount, int &comparisons );
+
+The merge function is used within Mergesort. This function compares the two split
+values in their respective boxes. It then merges the two values if they are in the
+sorted order, else swap them and then merge.
+
+void Mergesort( int a[], int firstLeft, int lastLeft, int firstRight, int lastRight, int &swapcount, int &comparisons );
+
+This function uses the Merge function. It uses recursion to find the two most middle
+indexs as well as the first and last to split the array into smaller and smaller chunks
+until the values are all on their own which it then passes to the Merge function to
+combine all of the pieces together again sorted.
+
+Data Sets:
+
+The random data sets were truly random values between 0 and 10 times their magnitude
+to insure that there were less likely to be repeats.
+
+The Low to High data sets used the indexes of the array as the values.
+
+The High to Low data sets used the total size of the array minus the index to get all
+of the values into decending order.

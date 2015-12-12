@@ -1,0 +1,68 @@
+Jonathan Buch
+Section #1
+Lab #7
+March 11th, 2015
+
+Error Explainations
+
+Error #0:
+
+Kind of an oversight, the string.h library needs to be
+included for strlen and strcpy to function properly.
+If it isn't included, then an incompatible implicit
+declaration occurs when trying to compile the program.
+
+Error #1:
+
+The first error is caused by the function strlen() on
+line 51 in the modified code (45 in the original). This 
+error occurs because the stringBuffer needs to account
+for the terminating character. The change that needed 
+to be made was the inclusion of +1 that would return the
+correct string length, including the terminating character.
+This error was quite interesting as it didn't have an effect
+on the actual output of the program which I found quite strange.
+
+strlen() - returns length of a string, not including the
+terminating character
+
+Error #2:
+
+The second error is caused by the function strcpy() on
+line 60 in the modified code (46 in the original). The
+change needed to be made was to switch the two arguments,
+from strcpy( argv[1], stringBuffer )
+to strcpy( stringBuffer, argv[1] ).
+This is because in strcpy() the first argument is the
+destination (where you want to copy the string to, in
+this case, stringBuffer) while the second argument is 
+the string you want to copy (argv[1]). This error caused
+the program to have an empty output when it ran.
+
+strcpy() - copies a string to another string. In this
+case, it should copy the character array argv[] to the
+stringBuffer. 
+
+Error #3:
+
+The third error was quite tricky to find as it caused a
+segmentation fault to occur when the you ran the program.
+It occurs on line 73 in the modified code (52 in the 
+original). The change that needed to be made was to
+change *stringBuffer to stringBuffer in the printf.
+The reason why this needed to be changed is because
+%s needs an entire string while using the * causes
+the variable to instead use the value at that location,
+causing the program to segmenation fault.
+
+Error #4:
+
+The fourth error occurs in line 96 of the modified
+code (70 in the original). In the function reverseIt, the
+error is caused by the char *stop being one too large. 
+The error is that it is accounting for the terminating
+character when it shouldn't be. The change that needed to 
+be made was to remove the +1 from the line. This error 
+caused the output of the program to give you an empty 
+stringBuffer after it exited the function, similarly 
+to what happened with strcpy.

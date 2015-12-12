@@ -1,0 +1,76 @@
+# Jonathan Buch CS210 hw3.icn October 1st, 2015
+
+procedure main(fname)
+	# Creates an empty list to store the double letter words
+	dbllttrw := []
+	# Places all of the double letter words into the empty list
+	dbllttrw := openfile(fname[1]) | stop("Unable to open specified file.")
+	# Sorts the double letter words by ascii value
+	dbllttrw := sort(dbllttrw)
+
+	# Creates an empty list to store the dictionary's double letter words
+	dict := []
+	dict := openfile("/usr/share/dict/words") | openfile("/usr/dict/words") | stop("Couldn't find dictionary.") 
+
+	# Creates an empty table to store the dictionary's double letter words
+	dicttable := table(0)
+	# Place the dictionary list elements into the table
+	every dictw := !dict do dicttable[dictw] +:=1
+
+	# Used to make sure there are no dublicates
+	checked := table(0)
+
+	# Used to store the double letter words from the file in a table
+	wordcount := table(0)
+	every word := !dbllttrw do wordcount[word] +:= 1
+	every word := !dbllttrw do {
+		# Checks to make sure the word hasn't already been checked
+		if not member(checked, word) then {
+			insert(checked, word, 1)  	
+			if member(dicttable, word) then {
+				write(word, " ", wordcount[word])
+			}
+			else {
+				if member(dicttable, map(word)) then {
+					write(word, " ", wordcount[word])
+				}
+				else {
+					write(word, " ", wordcount[word], " *")
+				}
+			}
+		}
+	}
+end
+
+# openfile(fname) takes a filename and attempts to open the file. If
+# it succeeds, create a new list and start reading in lines from the
+# file. From the lines read in, string scan them and determine, with
+# the help from wordDef, which words have double letters and puts them
+# into the list words. At the end, close the file and return the newly
+# created list.
+
+procedure openfile(fname)
+	wordDef := &letters ++ &digits ++ '\'-'
+	if file := open(fname) then {
+		words := []
+		while strings := read(file) do {
+			strings ? {
+				while tab(upto(wordDef)) do {
+					word := tab(many(wordDef))
+					word ? {
+						c := move(1)
+						while c2 := move(1) do {
+							if c2 == c then {
+								put(words, word)
+								break
+							}
+							else c := c2
+						}
+					}
+				}
+			}
+		}
+		close(file)
+	}
+	return words
+end

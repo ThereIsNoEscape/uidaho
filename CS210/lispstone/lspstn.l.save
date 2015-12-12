@@ -1,0 +1,178 @@
+;;; Jonathan Buch, CS 210 HW#2, September 15th, 2015
+
+;; Card Attributes ( cost, spellp, name, attack, health, special )
+
+(defun gamestate()
+	(setq PlayerHealth 30)
+	(setq AIHealth 30)
+	(setq Hand '(
+		(1 nil "C slug" 0 1 0)
+		(1 nil "int" 1 1 0)
+		(1 t   "++" 0 1 0)
+		(1 t   "^=" 4 0 0)
+		(2 nil "for (;;)" 2 2 1)
+		(3 nil "switch" 3 3 1)
+		(4 nil "array a[100]" 4 4 1)
+		(4 t   "Bus Error Fireball" 6 0 0)
+	))
+	(setq Hand '(
+		(1 nil "Atom" 0 1 0)
+		(1 t   "Car" 0 2 0)
+		(1 t   "Cdr" 2 0 0)
+		(1 nil "Parenthesis" 1 1 0)
+		(2 nil "Cons Cell" 2 1 1)
+		(3 nil "defun" 3 2 0)
+		(4 t   "Mapcar" 4 0 0)
+		(4 nil "Lisp Monster" 2 6 1)
+	))
+)
+
+(defun gloop (setq turn 1)
+	(loop
+		(progn
+; End Conditions
+			(if (eq PlayerHealth 0)
+				(printDeath 1)) 
+			(if (eq AIHealth 0)
+				(printDeath 0))
+			(setq energy turn)
+			(PlayerTurn)
+			(prntst)	
+			(setq energy turn)
+			(AITurn)
+			(prntst)	 
+			(1+ turn)
+		)
+	)
+)
+
+;; PlayCard - Checks if the string of the name of the card of you want to play
+;; is in your hand, then checks if you have enough energy to play it, and then
+;; finally "plays" the card. This function subtracts energy, removes a card from
+;; the hand, and updates the board.
+
+(defun PlayCard()
+	(if (null L) nil
+		(setq CardName (promptedcard "Enter the Name of the Card you wish to play"))
+		(if (= handsearch(Hand CardName) nil)
+			(format nil "Invalid Card Choice\n" nil)
+			(CpyRmv(Minions (handsearch(Hand CardName))))
+		)
+	)
+)
+
+(defun promptedcard(s) (format t "~a: " (read-line)))
+
+;; PlayAICard - Differences between this and PlayCard: Find highest playable energy
+;; card in AIHand, plays the card once found, and loops until no more cards are
+;; playable.
+
+(defun PlayAICard(L)
+	(if (null L) nil
+
+	)
+)
+
+;; CopyRemove - This function should find the card (list) in the list of lists (Hand or
+;; AIHand), create a whole new list of lists(Minions or Monsters) with the card, and remove
+;; the card from the first list of lists.
+
+(defun CpyRmv(card x)
+	(cons (first L) (CpyRmv(rest L)))
+)
+
+(defun LtoL(L LL)
+	()
+)
+
+;; Attack - This function takes a string of a minion that is currently on the board
+;; as well as a string of the monster or AI that the player commands it to attack. 
+;; This function should, upon minion attack, to update the health of any damaged minions.
+;; If a minion or monster has a 1 in the 6th slot of their card, Attacks from the 
+;; opponent should only be valid against that target.
+
+(defun Attack(minion monster)
+	()
+)
+
+;; AIAttack - Differences between this and Attack: AI attacks with all ready monsters
+;; at any valid target chosen randomly.  
+
+(defun AIAttack(monster minion)
+	()
+)
+
+
+
+(defun cardmatch(card match)(equal (nth 2 card) match))
+
+(defun searchhand(L s)
+	(if (null L) nil
+		(if (cardmatch (car L) s)
+			0
+			(let ((x (searchhand (cdr L) s)))
+				(if (null x) nil
+					(+1 x)
+				)
+			)
+		)
+	)
+)
+
+(defun promptedread(s) (format t "~a: " (read)))
+
+; Prints state of the game
+(defun prntst()
+	(progn
+		(format t "PlayerHealth ~a%" PlayerHealth)
+		(format t "AIHealth = ~a%" AIHealth)
+		(format t "Turn =  ~a%" turn)
+		(format t "Hand = ~a%" Hand)
+		(format t "AIHand = ~a%" AIHand)
+		(format t "Minions = ~a%" MinionList)
+		(format t "Monsters = ~a%" MonsterList)
+	)
+)
+
+(defun printDeath(x)
+; Player Death Message
+	(if (eq x 1)
+		(progn(
+			(print "The AI died. Player is victorious" *standard-output*)
+			(exit)
+		)
+	)
+; AI Death Message
+	(if (eq x 0)
+		(progn
+			(print "The AI died. Player is victorious" *standard-output*)
+			(exit)
+		)
+	)
+)
+
+; Player Turn
+(defun PlayerTurn()
+; PLAYER INPUT HERE
+	(setq Choice (promptedread "Enter: (1) Quit, (2) Attack, (3) Play Card, (4) End Turn, (5) End Game))
+	(cond
+		((= Choice 1)(exit))
+		((= Choice 2)(Attack))
+		((= Choice 3)(PlayCard))
+		((= Choice 4)(return-from PlayerTurn nil))
+		((= Choice 5)("ENDGAME"))
+		(t nil)
+	)
+	(PlayerTurn)
+)
+
+; AI Turn
+(defun AITurn()
+	(case (random 3)
+		(1 (AIAttack))
+		(2 (PlayAICard))
+		(3 (return-from AITurn nil))
+	)	
+	(AITurn)
+)
+

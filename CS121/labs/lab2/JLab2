@@ -1,0 +1,30 @@
+Jonathan Buch
+Section	#1
+Lab #2
+January 29th, 2015
+
+Difficulties:
+
+The first two steps of this lab were not too difficult, as they only too around 20 min.
+However, I did have trouble in regards to converting the arguments to different types
+as I don't recall doing them before. The first few attempts at getting step four
+to work correctly ended up giving me completely wrong answers to the operation being 
+executed. I believe that the cause of most of my problems when working on this lab comes
+from my inexperience dealing with command line arguments and how they are handled. In
+terms of time management for this lab, the first part was quite simple and took me about
+20% of the total time it took me to complete the lab, while steps 3 and 4 took the other
+80%. After revising the program to work correctly, I found that the problem lied in the
+fact that I wasn't using atoi or atof correctly and therefore was getting skewed results.
+
+New Information/Lessons Learned:
+ 
+I learned that converting command line arguments and variables in general require the use
+of the C Standard Library in order to access the commands atoi, atof, etc. I was then able
+to correctly manipulate the variables once they had been converted from their original type.
+
+Answers to the Questions:
+
+The first argument, argv[0], is the name of the file. The last argument was argv[i],
+i being the amount of actual arguments excluding the file name argument. When they are
+of different types, the conversion automatically converts the incorrect value to zero.
+The program works for all of the standard mathematical operations as ween in the output.

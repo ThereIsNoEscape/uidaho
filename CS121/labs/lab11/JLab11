@@ -1,0 +1,44 @@
+Jonathan Buch
+Section #1
+Lab #11
+April 16th, 2015
+
+Journal
+
+Time Spent/Difficulties:
+
+This lab was quite confusing for the first few day I worked on it because
+I thought I had to use a linked list inside of an array to store the actors'
+names which caused me a bit of a headache when trying to figure out the best
+way to print the nodes in the linked list. I ended up using a string array
+as it stored the actors' names as well as being able to be printed quite easily.
+This took me about 2 hours to implement and test to show that it was working
+correctly. The other major difficulty in this lab was being able to put the data 
+into a Binary search tree node as the way the data was stored in the file made it an
+inconvience to separate the data into managable chucks. After learning how
+delimiting characters work with getline(), the input was far less infuriating
+to do instead of the standard ifstream input methods. This took me around an
+hour and a half to fully complete as I had to research delimiting characters.
+Although I was somewhat agravated by this lab, I feel that this lab help me 
+prepare a lot for the test that is coming in the next week. I also had some 
+fun when getting this program to work when I wanted to see if shows I liked 
+were in the list. Overall, this lab took me about 7 hours to complete with 2 of
+those hours brainstorming ideas for the lab. The rest of the time was spent debugging
+and testing any erroneous code. 
+
+*Of Note* 
+The input file turned out to be more of a problem than first anticpated
+because there were added spaces after movie names and some actors that screwed up
+some of my prints at first. These were easily remedied by changing the input file 
+slightly, but nonetheless took around 20 minutes total to fix the input file.
+
+Lessons Learned:
+
+I learned that Binary search trees act much like singly linked lists do, but are a
+lot faster when trying to find a specific node. I also learned that searches within
+a binary search tree, even an exhaustive one, are still incredibly fast. I was quite
+amazed at how it was able to compute all of the nodes and store them in the correct 
+order in such a small amount of time. I also learned that the simplist approach is
+the best when nesting different data structures together ( Arrays are easier to
+implement than linked lists ). Other than that, I learned much about how Binary 
+search trees actually work and how they need to implemented.

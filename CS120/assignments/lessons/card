@@ -1,0 +1,60 @@
+class card{
+	private:
+		int rank;
+		int suit;
+	public:
+		void print();
+		void random();
+}
+
+int main(){
+	card c1;
+	c1.print();
+}
+
+void card::print(){
+	if(rank >= 2 && <= 10){
+		cout << rank << endl;
+	}
+	switch(rank){
+		case 0:
+			break;
+		case 1:
+			cout << "Ace" << endl;
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		case 7:	
+			break;
+		case 8:
+			break;
+		case 9:
+			break;
+		case 10:
+			break;
+		case 11:
+			cout << "Jack" << endl;
+			break;
+		case 12:
+			cout << "Queen" << endl;
+			break;
+		case 13:
+			cout << "King" << endl;
+			break;
+		default:
+			break;	
+	cout << suit << endl;
+}
+
+for(...){
+	c1.random();
+	c1.print();
+}

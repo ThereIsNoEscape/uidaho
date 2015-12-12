@@ -1,0 +1,42 @@
+Jonathan Buch
+Section #1
+Lab #7
+March 11th, 2015
+
+Journal
+
+Difficulties/Time Spent:
+
+This lab was relatively easy as it was only debugging.
+However, debugging in itself can take a lot of time as
+experienced with this lab. I found that most of the
+difficulty came from understanding the functions that
+were being used as they were the main errors that were
+causing the program to fail. Learning the functions and
+being able to fix them took a majority of the time spent
+on this lab, around 50-60 min. The other major hinderance
+was trying to find where the program kept segmentaion
+faulting as it didn't give me any clues as to where to 
+find the erroneous code. That segment of code alone took
+me about 30 min to find as I am not too familiar with C.
+Other than that, the lab wasn't too hard as placing output
+statements helped me find and locate the last error that 
+occured with the function.
+Overall, this function took me around an hour and 45 
+minutes to complete.
+
+Lessons Learned:
+
+From this lab, I learned that solving some memory related
+errors in code is much easier than that of reading output
+statements or trying to stop the program from segmentation
+faulting as those errors show up in the compiler even before
+you start editing the code. I also learned that seg faults
+are incredibly difficult to locate in the code as there is
+no assistance in trying to locate the code that is causing
+the error. The main thing I learned was how to properly use
+strlen and strcpy as I hadn't known about them beforehand.
+This lab also has helped me become more aware of the
+differences between C and C++, specifically how errors are 
+reported. This lab also helped me become better at using
+and fixing errors in C code.

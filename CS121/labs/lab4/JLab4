@@ -1,0 +1,28 @@
+Jonathan Buch
+Section #1
+Lab #4
+February 17th 2015
+
+Time Required:
+
+For this lab, it took me a considerable amount of time to figure out how to split a string into different strings. In total,
+it took me about 4 hours to get istringstream to split the string correctly. For the code of the stack, it took me about 30 min.
+The linked list code was the easiest around 20 min and required some change from Prof. Bolden's original code, although
+there were some changes that needed to be made regardinig the output. Overall, this program took me about 5 hours of just coding
+to complete with about 2 hours spent looking up how to get istringstream to work. 
+
+Difficulties Experienced:
+
+The by and far most difficult challenge for me with this lab was being able to split a string into multiple strings that were all
+one line. As I am quite inexperienced in this field, I feel that had I known how to split a string beforehand, this program would
+have been a breeze. The only other problems I encountered were those of error checking the methods and operations and getting all
+of the if else statements lined up correctly. Regarding the operations, I felt that they were simple enough, but the sqrt, subtract
+and divide were giving me problems at points along the way.
+
+Lessons Learned:
+
+This lab helped me learn about how to split strings and then take each of the strings as separate input. I also gaind a lot of insight
+on how stacks worked and function. When working with the 5 separate files, I learned how each of the files are related and how to 
+include the correct files for each. I also learned that Push, Pop, and Peek, work inside of the Stack implementation files, simplifying
+most of the code from main into functions that were then created in the Stack file. I feel that learning how to split strings from a 
+single line of input will be invaluable to me with labs to come.

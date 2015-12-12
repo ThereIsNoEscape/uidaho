@@ -1,0 +1,51 @@
+Jonathan Buch
+Section #1
+Lab #14
+May 7th, 2015
+
+Journal
+
+Difficulties Encounted/Time Spent:
+
+The most difficult part of this lab was getting the counts into each
+function and passing them by reference. Editing my code to pass by reference
+instead of using global variables took me about 45 minutes to complete.
+Another problem I had during this lab was initially creating the data. This
+was because I had thought that we needed to directly create the arrays and
+pass the arrays themselves into the main file. After finding out that they
+needed to be regular files, it was much easier to write functions to create
+all of data files that were necessary for this lab. This took me about 1 hour
+to complete. The last problem I had was figuring out when the swap count and
+the comparison counts needed to be incremented. After some study, I believe
+that I placed them correctly and got the correct data out from my functions.
+This took me the majority of the time, around 1 and a half hours. In total,
+this lab took me around 4 hours to complete.
+
+Lessons Learned:
+
+From this lab, I learned the pros and cons to using each of the
+different sorting methods. I also learned that passing the counts
+by reference is a lot harder than using a global variable. This lab
+also made me learn that it is best to use a function to handle all
+of the data files that are to be input instead of the method that I
+used in which they were brute forced.
+
+
+Best/Worst Sorts for each data file:
+
+SelectionSort:
+Good:
+All files, best for already sorted lists
+from low to high.
+
+Quicksort:
+Good:
+Sorting when low to high
+Bad:
+Large files and files sorted from high to low
+
+Mergesort:
+Good:
+When files are small, less than 10000
+Bad:
+When files are large, around 10000

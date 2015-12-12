@@ -1,0 +1,26 @@
+Jonathan Buch
+Section #1
+Lab #5
+February 25th, 2015
+Journal #5
+
+Difficulties/Time Management:
+
+For this lab, I found that the greatest part that was troubling for me was understanding
+what exactly I needed to do for the lab as it took me 45 minutes. The next part I had 
+trouble with was getting the Makefile to recognise testStack and testQueue as 2 separate
+files with both containing distinct parts. After taking about 30 minutes solving that, most
+of the program was smooth sailing as all of the source code was already there for me. I
+had to take the time to fix some of the incosistencies in most of the files that were
+given, which only took about 20 minutes, but other than that, not much actually caused me a
+great deal of thought. This lab in total took me about 2 hours to complete after all of
+the debugging was finished. Most of the lab files that were retrieved from Bolden's page
+have been edited to correctly compile and be used for this lab.
+
+Lessons Leanred:
+
+From this lab, I learned mainly how to use the make command to compile files as well as
+how to modify the make file to correctly compile the code need to make the program run
+correctly. Most of this was solved through trial and error as well as looking at the code
+itself for clues on how it ran. I also learned that you can run the executables made and
+they work just like if you had compiled them normally.

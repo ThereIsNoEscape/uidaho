@@ -1,0 +1,21 @@
+class    ~  type
+objects  ~  variables
+pet p;   ~  double y
+class pet{
+	private:
+		string name; // data members
+		int happy;   // ^^^^^^^^^^^^
+	public:
+		void play(); // function members
+		pet(); // constructor
+};
+
+int main(){
+	pet p; // The constructor gets called
+	pet x; // ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	pet p77; // ^^^^^^^^^^^^^^^^^^^^^^^^^
+	p.happy = 50;    // Will not work because of private
+	x.name = "Bob";  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	p.play();
+}
+function definitions

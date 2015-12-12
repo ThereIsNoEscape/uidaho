@@ -1,0 +1,25 @@
+Jonathan Buch
+Section #1
+Lab #3
+February 5th, 2015
+
+Program Design Log:
+
+First off, I am going to need a 1 dimensional array to store the characters, 1 or 0.
+Next, I need to create a way for the program to read in files that have an initial 
+configuration. Next, I'll need to use either rand or % 1 with a for loop to create
+a random configuration. Since there will be two ways in which the initial state 
+can be created, it might be a good idea to create a menu before generation to prompt
+the user as to which method to use. Another way would be to create two different arrays
+to store the two different initial configurations. The only problem with this method is
+that the user need to enter a file name so the second method wouldn't work as well. Next,
+I'm going to need an incrementing for loop that has two rules to specify if a cell is
+alive or dead. The first being if(array[x] == 1){ array[x] = 0 }, the second is 
+if(array[x] == 0 && (array[x++] == 1 || array[x--] == 1)) { array[x] = 1 }. I can test
+the storage of the initial array by printing it out to the user. Testing the rules is
+a bit more tricky as I have to have the array print out several times in order to
+track the changes that are occuring within the array. Something for me to keep in mind 
+is to decide whether or not I want the array to print after one change or all changes
+occur in the array. Since it requires a dynamic array, I will have to change the arrays
+to pointers to arrays and set them via the pointers. I think it will take me about 2 hours
+to complete this program as infile and ifstream are relatively new to me.  

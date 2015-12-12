@@ -1,0 +1,87 @@
+Script started on Thu 07 May 2015 11:29:45 PM PDT
+[?1034hbash-4.1$ ./a.out
+Filename: rand100.txt
+
+Number of Swaps with Mergesort: 672
+Number of Comparisions with Mergesort: 552
+Number of Swaps with Quicksort: 488
+Number of Comparisions with Quicksort: 735
+Number of Swaps with Selectionsort: 95
+Number of Comparisions with Selectionsort: 5050
+-----------------------------------------------------------------
+Filename: rand1000.txt
+
+Number of Swaps with Mergesort: 9976
+Number of Comparisions with Mergesort: 8703
+Number of Swaps with Quicksort: 6466
+Number of Comparisions with Quicksort: 10758
+Number of Swaps with Selectionsort: 994
+Number of Comparisions with Selectionsort: 500500
+-----------------------------------------------------------------
+Filename: rand10000.txt
+
+Number of Swaps with Mergesort: 133616
+Number of Comparisions with Mergesort: 120426
+Number of Swaps with Quicksort: 92170
+Number of Comparisions with Quicksort: 160637
+Number of Swaps with Selectionsort: 9987
+Number of Comparisions with Selectionsort: 50005000
+-----------------------------------------------------------------
+Filename: sortHL100.txt
+
+Number of Swaps with Mergesort: 672
+Number of Comparisions with Mergesort: 316
+Number of Swaps with Quicksort: 2599
+Number of Comparisions with Quicksort: 4950
+Number of Swaps with Selectionsort: 50
+Number of Comparisions with Selectionsort: 5050
+-----------------------------------------------------------------
+Filename: sortHL1000.txt
+
+Number of Swaps with Mergesort: 9976
+Number of Comparisions with Mergesort: 4932
+Number of Swaps with Quicksort: 250999
+Number of Comparisions with Quicksort: 499500
+Number of Swaps with Selectionsort: 500
+Number of Comparisions with Selectionsort: 500500
+-----------------------------------------------------------------
+Filename: sortHL10000.txt
+
+Number of Swaps with Mergesort: 133616
+Number of Comparisions with Mergesort: 64608
+Number of Swaps with Quicksort: 25009999
+Number of Comparisions with Quicksort: 49995000
+Number of Swaps with Selectionsort: 5000
+Number of Comparisions with Selectionsort: 50005000
+-----------------------------------------------------------------
+Filename: sortLH100.txt
+
+Number of Swaps with Mergesort: 672
+Number of Comparisions with Mergesort: 356
+Number of Swaps with Quicksort: 99
+Number of Comparisions with Quicksort: 4950
+Number of Swaps with Selectionsort: 0
+Number of Comparisions with Selectionsort: 5050
+-----------------------------------------------------------------
+Filename: sortLH1000.txt
+
+Number of Swaps with Mergesort: 9976
+Number of Comparisions with Mergesort: 5044
+Number of Swaps with Quicksort: 999
+Number of Comparisions with Quicksort: 499500
+Number of Swaps with Selectionsort: 0
+Number of Comparisions with Selectionsort: 500500
+-----------------------------------------------------------------
+Filename: sortLH10000.txt
+
+Number of Swaps with Mergesort: 133616
+Number of Comparisions with Mergesort: 69008
+Number of Swaps with Quicksort: 9999
+Number of Comparisions with Quicksort: 49995000
+Number of Swaps with Selectionsort: 0
+Number of Comparisions with Selectionsort: 50005000
+-----------------------------------------------------------------
+bash-4.1$ exit
+exit
+
+Script done on Thu 07 May 2015 11:29:50 PM PDT

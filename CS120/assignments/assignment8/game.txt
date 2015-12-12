@@ -1,0 +1,10 @@
+ 0 0 0 0 _ **************Escape the Cave**************
+ 0 0 0 0 _ Oh no! You and an opponent have been trapped in an ice cave which is collapsing!
+ 0 0 0 0 _ The goal of this game is to reach the exit before time runs out!
+ 0 0 0 0 _ The player who reaches the exit first survives the cave in.
+ 4 +3 +3 +8 * Find a shortcut! Go ahead 3 squares and gain 8 points.
+ 7 -2 -2 -2 % Slip on some ice! Go back 2 squares and lose 2 points.
+ 10 +1 +5 +6 ? Random Event! Gain 6 points.
+ 14 +2 +2 +2 & Adrenaline helps you push forward 2 more squares and nets you 2 points. 
+ 17 -4 -4 -4 ! A small cave-in blocks your current path and makes you move back 4 squares. 
+   

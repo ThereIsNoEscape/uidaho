@@ -1,0 +1,2 @@
+   7 -2 ? Go back 2 squares. 
+   4 +1 * Go ahead 1 square.

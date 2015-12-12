@@ -1,0 +1,61 @@
+# Jonathan Buch CS210 hw3.icn October 1st, 2015
+
+procedure main(fname)
+	dbllttrw := []
+	dbllttrw := openblah(fname[1]) | stop("Unable to open specified file.")
+	dbllttrw := sort(dbllttrw)
+
+	dict := []
+	dict := openblah("/usr/share/dict/words") | openblah("/usr/dict/words") | stop("Couldn't find dictionary.") 
+		
+	dicttable := table(0)
+	every dictw := !dict do dicttable[dictw] +:=1
+
+	checked := table(0)
+
+	wordcount := table(0)
+	every word := !dbllttrw do wordcount[word] +:= 1
+	every word := !dbllttrw do {
+		if not member(checked, word) then {
+			insert(checked, word, 1)  	
+			if member(dicttable, word) then {
+				write(word, " ", wordcount[word])
+			}
+			else {
+				write(word, " ", wordcount[word], " *")
+			}
+		}
+	}
+end
+
+procedure openblah(fname)
+	wordDef := &letters ++ &digits ++ '\'-'
+	if file := open(fname) then {
+		words := []
+		while strings := read(file) do {
+			strings ? {
+				while tab(upto(wordDef)) do {
+					word := tab(many(wordDef))
+					word ? {
+						c := move(1)
+						while c2 := move(1) do {
+							if c2 == c then {
+								if fname == "dict" then {
+									put(words, map(words))
+									break
+								}
+								else {
+									put(words, word)
+									break
+								}
+							}
+							else c := c2
+						}
+					}
+				}
+			}
+		}
+		close(file)
+	}
+	return words
+end

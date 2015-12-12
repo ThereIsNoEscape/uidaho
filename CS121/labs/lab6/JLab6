@@ -1,0 +1,32 @@
+Jonathan Buch
+Section #1
+Lab #6
+March 4th, 2015
+Journal
+
+Difficulties/Time Required:
+
+The most difficult part of this lab was getting used to using C and how
+it differed from C++. This was mainly problematic when input and output
+was concerned as I haven't worked with plain C before. Understanding C
+took me about 2 hours total due to being unfamilar with the syntax.
+The other hard part about the lab was calculating the variance to find
+the standard deviation. Since I was be unable to use a formula in the
+while loop that was reading the file, it required the use of an array
+to store the data for later use in the function. This took me about 45
+minutes to solve and implement correctly in my program. Other than that,
+there were not many other major problems that occured over the course
+of coding the program.
+Total Time Needed: About 3 hours and 20 minutes.
+
+Lessons Learned:
+
+The main lesson of this lab for me was leaning how C worked and how 
+it is different from C++. I feel that C is quite simple, but input
+and output are a little more complicated than that of C++. I also
+learned how to input and output to a file using C which is quite
+useful as I had trouble in C++ with file i/o. I also learned how
+standard deviation is calculated which was quite interesting to
+solve and implement. I felt that this program was meant to be a
+crash course in C. Not too hard or easy, but requiring me to step
+outside my comfort zone and use a "new" language. 

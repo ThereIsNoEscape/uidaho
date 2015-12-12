@@ -1,0 +1,28 @@
+Jonathan Buch
+Section #1
+Lab #12
+April 23rd, 2015
+
+Journal
+
+Difficulties Encountered/Time Spent:
+
+For this lab, I found that using the supplied code was exponentially easier than
+trying to use the linked list class that I had created. At first, I tried using
+my own linked list class, but found that it wouldn't add the nodes correctly. 
+After I discussed my problem with a classmate, I found that the supplied code 
+made the lab much easier than I was making it out to be. The next major problem
+I encountered was getting one of my functions to accept a string into a character
+array. This was difficult becuase I didn't understand why a string couldn't be
+directly converted into a character array. After some searching online, I found
+out how to get the string into a character array and that solved my final problem.
+Overall, this lab took me around 5 hours to complete. 3 and a half hours coding with
+the other hour and a half devoted to debugging and the output necessary for the lab
+
+Lessons Learned:
+
+From this lab, I learned how to convert a string into a character array that can then
+be used within a function. The more important lessons that I learned during this lab
+is how hash tables function and when they should be used. The flexiblity of hash tables
+has given me insight on how each data structure is unique and more capable of handling
+different problems.

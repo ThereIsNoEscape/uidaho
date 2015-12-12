@@ -1,0 +1,46 @@
+/*	Jonathan Buch
+
+*/
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int makearg( char *s, char ***args );
+
+int main(){
+	char **argv, str[] = "ls -l file";
+	int argc = 0;
+	argc = makearg( str, &argv );
+	
+	for( int i = 0; i < argc; i++ ){
+		printf( "args[%d] = \n%s", i, argv[0][i] );
+	}
+	
+	return 0;
+}
+
+int makearg( char *s, char ***args ){
+	int count = 0;
+	char *copy = strdup( s ); 
+	char **r = NULL;
+	char *s = strtok( str, " " );
+
+	while( s ){
+		count++;
+		r = realloc( r, sizeof( char* ) * count ); 
+
+		if( r == NULL ){
+			free( r );
+			return -1;
+		}
+		
+		s = strtok( NULL, " " );
+	}
+
+	*args = r;
+
+	free( copy );
+
+}

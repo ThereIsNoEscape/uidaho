@@ -1,0 +1,34 @@
+Jonathan Buch
+Section #1
+Lab #8
+March 25th, 2015
+
+Lab Journal
+
+Difficulties/Time Required:
+
+For me, this lab wasn't very difficult because it was
+simply a continuation of last week's lab. The only difference
+being that gdb was used instead of printf statements.
+gdb greatly sped up the time it took to find most of the 
+errors in the program as you could test each of the 
+attributes of the program while finding the specific 
+places where the errors occured. I found that gdb helped
+me immensely when finding errors as I could test a string 
+and the functions while not crashing the program. This lab 
+in total took me around 1 hour and 20 minutes to complete 
+with 60 minutes spent learning gdb and using gdb to find 
+errors while the other 20 minutes was spent documenting 
+the errors that were found.
+
+Lessons Learned:
+
+I learned that gdb is a great tool in helping a programmer
+find the errors in a program simply by allowing the ability
+to test the properties in the program without causing the 
+program to immediately close. Another great benefit of using
+gdb was being able to go step by step in the program itself
+which I found quite interesting. Since this was a continuation
+of last weeks lab, I felt that the program was already
+familiar and during this lab I didn't find out anything new 
+about the program. 

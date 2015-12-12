@@ -1,0 +1,21 @@
+Script started on Thu 04 Sep 2014 03:54:17 PM PDT
+[?1034hbash-4.1$ ./fortuneassign1.out
+Enter your favorite number (no decimals): 8
+Enter a number you don't like (no decimals): 5
+Enter your age: 18
+Enter your shoe size (regardless of gender): 11
+
+Your secret, lucky number is: 7
+Today you should embrace technology.
+You are 18
+You have large feet.
+Press enter to quit.
+
+bash-4.1$ pwd
+/home/buch4710/CS120/assignments
+bash-4.1$ ls
+fortuneassign1.out  fortuneassign1output  fortuneassignment1.cpp
+bash-4.1$ exit
+exit
+
+Script done on Thu 04 Sep 2014 03:54:40 PM PDT

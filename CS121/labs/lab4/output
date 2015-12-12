@@ -1,0 +1,29 @@
+Script started on Thu 19 Feb 2015 10:33:32 AM PST
+[?1034hbash-4.1$ ./a.out
+RPN Calculator by Jonathan Buch
+RPN (empty) > 3.2 1.2 +
+RPN 4.4 > 4.2 2.3 -
+RPN 1.9 > 3.1 7.5 *
+RPN 23.25 > 27.0 3.0 /
+RPN 9 > ps
+Stack Contents: 9 23.25 1.9 4.4 
+RPN 9 > dup
+RPN 9 > ps
+Stack Contents: 9 9 23.25 1.9 4.4 
+RPN 9 > sqrt
+RPN 3 > 5.5 sq
+RPN 30.25 > ps
+Stack Contents: 30.25 3 9 23.25 1.9 4.4 
+RPN 30.25 > swap
+RPN 3 > ps
+Stack Contents: 3 30.25 9 23.25 1.9 4.4 
+RPN 3 > 2.5 1.3 - sq 7.9 2.4 - sq + sqrt
+RPN 5.62939 > 2.4 sq 3.13 sq + sqrt
+RPN 3.94422 > ps
+Stack Contents: 3.94422 5.62939 3 30.25 9 23.25 1.9 4.4 
+RPN 3.94422 > quit
+RPN 3.94422 > 
+bash-4.1$ exit
+exit
+
+Script done on Thu 19 Feb 2015 10:36:28 AM PST

@@ -1,0 +1,41 @@
+Jonathan Buch
+Section #1
+Lab #13
+April 30th, 2015
+
+Journal
+
+Difficulties Expirenced/Time Spent:
+
+The main difficulty I had in this lab was understanding how and
+why function pointers are used. I also was a bit confused by how
+the lab was worded because when I started the lab, I thought that
+we had to change the sortLines.cpp file to use our filter with a
+function pointer. After discussing with some classmates, I discovered
+my error and started anew. The only part that I had some trouble with
+on my new files was getting the function pointer to work correctly.
+The first attepmt that I made declared the function pointer on its
+own while in the function that used the function pointer was also
+declaring the pointer which led me to discover that it could be used
+either in the function definition or on its own, not both. I decided
+to stick with the function pointer in the function declaration itself
+as it made the rest of the code much less complex. In all, I spent
+50 minutes working on the sortLines.cpp mistake, and about 45 minutes
+on the actual program that I had created. I looked up function pointers
+for about an hour in order to become more familiar with them to make
+this lab go smoother. This lab in total took me around 2 hours and 30
+minutes to complete including the research on function pointers.
+
+Lessons Learned:
+
+This lab mainly helped solidify the concept of function pointers and
+the extent of their usefulness in a program. I found that function
+pointers can be helpful when you are trying to a function that can
+vary by how the user wants the data. For example, in this lab, you
+could filter it many different ways and use the function pointer to
+specify which function that you want to use for your data. I also
+learned that since the usefulness of function pointers is lost when
+you have a limited number of variable functions, it is best to use
+them when you have a variety of functions that can be used in many
+different ways. Otherwise, function pointers aren't worth the extra
+effort.

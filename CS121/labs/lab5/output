@@ -1,0 +1,88 @@
+Script started on Wed 25 Feb 2015 05:10:41 PM PST
+[?1034hbash-4.1$ ls
+link.cpp  listQ.cpp  Makefile  QueueL.cpp  stack.cpp  testQueue.cpp
+link.h	  listQ.h    output    QueueL.h    stack.h    testStack.cpp
+bash-4.1$ make testStack
+g++    -c -o testStack.o testStack.cpp
+g++    -c -o stack.o stack.cpp
+g++    -c -o link.o link.cpp
+g++ -o testStack testStack.o stack.o link.o		
+
+* Question 1:
+*
+* When one of the header files was modified, the make command only recompiled
+* the cpp files that were affected by the changed header file. This surprised
+* me as I assumed that using make just recreated all of the object files each
+* time.
+*
+
+bash-4.1$ ./testStack 
+Pushing integers onto iStack
+0 1 2 3 4 
+Contents of iStack
+4
+3
+2
+1
+0
+
+Popping integers from iStack
+4 3 2 1 0 
+The stack is empty
+bash-4.1$ ls
+link.cpp  listQ.cpp  output	 stack.cpp  testQueue.cpp  testStack.o
+link.h	  listQ.h    QueueL.cpp  stack.h    testStack
+link.o	  Makefile   QueueL.h	 stack.o    testStack.cpp
+bash-4.1$ make testQueue
+g++    -c -o testQueue.o testQueue.cpp
+g++    -c -o QueueL.o QueueL.cpp
+g++    -c -o listQ.o listQ.cpp
+g++ -o testQueue testQueue.o QueueL.o listQ.o
+
+* Question 2:
+*
+* The last arguement for both of the make cases was either testStack with its
+* object files, or testQueue with its object files. I figured that regardless
+* of any of the files being changed, the test programs would always recompile
+* last with all of the object files.
+*
+
+bash-4.1$ ./testQueue
+Initial contents of q1:
+3
+5
+Contents of q1 after adding:
+3
+5
+1
+
+Deleting two items from queue:
+Contents of q1 after deleting one item:
+5
+1
+Contents of q1 after deleting one item:
+1
+bash-4.1$ ls
+link.cpp  listQ.cpp  Makefile	 QueueL.h   stack.h    testQueue.cpp  testStack.cpp
+link.h	  listQ.h    output	 QueueL.o   stack.o    testQueue.o    testStack.o
+link.o	  listQ.o    QueueL.cpp  stack.cpp  testQueue  testStack
+bash-4.1$ make clean
+rm -f testStack 
+rm -f testQueue
+rm *.o
+
+* Question 3:
+*
+* With the make clean command, I was quite surprised to find that it cleaned
+* up all of the object files as well as the executable itself. This was 
+* incredibly useful to clean up my folder of all of the object files that 
+* were created.
+*
+
+bash-4.1$ ls
+link.cpp  listQ.cpp  Makefile  QueueL.cpp  stack.cpp  testQueue.cpp
+link.h	  listQ.h    output    QueueL.h    stack.h    testStack.cpp
+bash-4.1$ exit
+exit
+
+Script done on Wed 25 Feb 2015 05:11:34 PM PST

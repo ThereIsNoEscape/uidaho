@@ -1,0 +1,43 @@
+Script started on Thu 30 Apr 2015 11:28:03 AM PDT
+[?1034hbash-4.1$ ./a.out
+Filter 1 Contents
+1
+5
+2
+7
+9
+2
+3
+1
+8
+5
+Filter 1 contents after filtering values above: 5
+1
+5
+2
+2
+3
+1
+5
+Filter 2 Contents
+4
+7
+11
+25
+15
+2
+1
+7
+0
+8
+Filter 2 contents after filtering values below: 5
+7
+11
+25
+15
+7
+8
+bash-4.1$ exit
+exit
+
+Script done on Thu 30 Apr 2015 11:28:07 AM PDT

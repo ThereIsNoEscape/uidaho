@@ -1,0 +1,50 @@
+Jonathan Buch
+Section #1
+Lab #11
+April 16th, 2015
+
+Programming Log
+
+Data Members:
+
+string title - Used to store the shows title
+int year1 - Used to store the beginning year of the show
+int year2 - Used to store the ending year of the show
+string genre - Used to store the genre of the show
+string website - Pointless, but stores the website anyway ( Makes the input less of a hassle )
+string actorArray[] - Used to store the actors of a show up to 20 in an array
+
+Methods:
+
+void PrintBSTInOrder( BSTNodePtr ) - Used to print all of the nodes in the binary
+				     search tree in order ( left, root, right ).
+
+void AddBSTNode( string, int, int, string, string, string [] ) - Used to add a node to the
+								 tree in alphabetical order 
+								 by title
+
+void STRA( string ) - Used with SearchTitleRActors. Specifically, this function gets the root
+		      pointer that allows its sister function to search the entire tree. 
+
+void SearchTitleRActors( BSTNodePtr, string ) - Used to find a list of actors based on a supplied
+						string, title, to find the list of actors of a
+						requested show.
+
+void SART( string ) - Used with SearchActorsRTitles. Similar to the above function, this function
+		      allows its sister function to search the entire linked list with the root
+		      pointer.
+
+void SearchActorsRTitles( BSTNodePtr, string ) - This function takes a string, an actor's name,
+						 and searches all of the nodes in the tree to
+						 find which shows that the actor was a part of.
+						 This function returns the titles of the shows
+						 that the actor worked on.
+
+void SDRT( int, int ) - Same as STRA and SART.
+
+void SearchDatesRTitles( BSTNodePtr, int, int ) - This function takes two integers, the first
+						  being the starting year of the range you want to print,
+						  and the second being the ending year of the range.
+						  This function essentially allows you to search any range
+						  of dates and get the shows that were being aired at that
+						  time.

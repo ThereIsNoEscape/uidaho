@@ -1,0 +1,19 @@
+Script started on Thu 04 Sep 2014 03:28:39 PM PDT
+[?1034hbash-4.1$ ./fortunelab1.out
+Welcome to the Fortune Teller of DOOM!
+Enter your age: 18
+Enter a number you don't like (no decimals): 5
+
+Unfortunatly for you, Your Doomed Number is: 15318
+Are you wondering what will happen? Well you shouldn't be because you are DOOMED FOR THE NEXT 75 YEARS!!!!!
+Hope you enjoy you enjoy your future of DOOM! You should stop by again in the future.
+Press enter to enjoy your life of DOOM.
+
+bash-4.1$ pwd
+/home/buch4710/CS120/labs
+bash-4.1$ ls
+fortunelab1.cpp  fortunelab1.out  lab1output
+bash-4.1$ exit
+exit
+
+Script done on Thu 04 Sep 2014 03:29:05 PM PDT

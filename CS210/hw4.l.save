@@ -1,0 +1,137 @@
+	int num_lines = 0, num_chars = 0;
+%%
+\n	++num_lines; ++num_chars;
+.	++_num_chars;
+
+%%
+
+PLACEHOLDERS
+"U"[0-9]+"."[0-9]+"."00			{return VERSIONSTAMP; }
+"h.u1"[0-9]"-"[0-9]+"-"[0-9]+		{return UCODESTAMP; }
+[1-9][0-9]*				{return DECCONST; }
+","					{return COMMA; }
+0[0-9]*					{return OCTCONST; }
+"^L"					{return CONTROL_L; }
+3.14159					{return REALCONST; }	*CHECK*
+[a-zA-Z0-9]*"."[a-zA-Z]*		{return FILENAME; }	*CHECK*
+"local"					{return Op_Local; }
+"global"				{return Op_Global; }
+"proc"					{return Op_Proc; }
+"declend"				{return Op_Declend; }
+"end"					{return Op_End; }
+"link"					{return Op_Link; }
+"version"				{return Op_Version; }
+"con"					{return Op_Con; }
+"filen"					{return Op_Filen; }
+"					{return Op_Record; }
+					{return Op_Impl; }
+					{return Op_Error; }
+					{return Op_Trace; }
+					{return Op_Lab; }
+					{return Op_Invocable; }
+					{return Op_Copyd; }
+					{return Op_Trapret; }
+					{return Op_Trapfail; }
+"synt"					{return Op_Synt; }
+"uid"					{return Op_Uid; }
+
+ Op_Asgn
+ Op_Bang
+ Op_Cat
+ Op_Compl
+ Op_Diff
+ Op_Div
+ Op_Eqv
+ Op_Inter
+ Op_Lconcat
+ Op_Lexeq
+ Op_Lexge
+ Op_Lexgt
+ Op_Lexle
+ Op_Lexlt
+ Op_Lexne
+ Op_Minus
+ Op_Mod
+ Op_Mult
+ Op_Neg
+ Op_Neqv
+ Op_Nonnull
+ Op_Null
+ Op_Number
+ Op_Numeq
+ Op_Numge
+ Op_Numgt
+ Op_Numle
+ Op_Numlt
+ Op_Numne
+ Op_Plus
+ Op_Power
+ Op_Random
+ Op_Rasgn
+ Op_Rcv
+ Op_RcvBk
+ Op_Refresh
+ Op_Rswap
+ Op_Sect
+ Op_Snd
+ Op_SndBk
+ Op_Size
+ Op_Subsc
+ Op_Swap
+ Op_Tabmat
+ Op_Toby
+ Op_Unions
+ Op_Value	 47
+/*
+ * Other instructions.
+ */
+ Op_Bscan	 117
+ Op_Ccase	 118
+ Op_Chfail	 119
+ Op_Coact 	 120
+ Op_Cofail	 48
+ Op_Coret 	 49
+ Op_Create	 50
+ Op_Cset  	 51
+ Op_Dup   	 52
+ Op_Efail 	 53
+ Op_EInit 	 116
+ Op_Eret  	 54
+ Op_Escan 	 55
+ Op_Esusp 	 56
+ Op_Field 	 57
+ Op_Goto  	 58
+ Op_Init  	 59
+ Op_Int   	 60
+ Op_Invoke	 61
+ Op_Keywd 	 62
+ Op_Limit 	 63
+ Op_Line  	 64
+ Op_Llist 	 65
+ Op_Lsusp 	 66
+ Op_Mark  	 67
+ Op_Pfail 	 68
+ Op_Pnull 	 69
+ Op_Pop   	 70
+ Op_Pret  	 71
+ Op_Psusp 	 72
+ Op_Push1 	 73
+ Op_Pushn1 	 74
+ Op_Real   	 75
+ Op_Sdup   	 76
+ Op_Str    	 77
+ Op_Unmark 	 78
+ Op_Var    	 80
+ Op_Arg		 81
+ Op_Static	 82
+ Op_Local	 83
+ Op_Global	 84
+ Op_Mark0	 85
+ Op_Quit		 86
+ Op_FQuit	 87
+#define Op_Tally	 88
+#define Op_Apply	 89
+
+
+	[a-zA-Z]*				{return IDENTIFIER; }
+************************************************{return ANY; }

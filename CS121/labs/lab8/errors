@@ -1,0 +1,55 @@
+Jonathan Buch
+Section #1
+Lab #8
+March 25th, 2015
+
+Errors and Explaination
+
+Error #1 ( Line 39 ):
+
+Using gbd, the first error that I found was that the explaination
+of the program prints twice. This occurs because the second string is
+created once, then the %s causes it to print again. An easy fix to 
+this error would be to simply remove the second double quotes as 
+they interfere with the %s.
+
+Error #2 ( Line 20 ):
+
+The second error that I found was that the string.h library wasn't
+included which caused the functions strlen and strcpy to not work.
+This error is easily fixed by just inclduing <string.h> in the
+libraries included.
+
+Error #3 ( Line 45 ):
+
+The next error that I found involved the strlen function. This was
+causing an error because string length needs to include the
+terminating character as well or you have an off by one error. The
+fix for this is to add a + 1 to strlen before you allocate the memory.
+
+Error #4 ( Line 46 ):
+
+The next error found occurs within the strcpy function as it isn't
+copying the string correctly. I found that the destination and
+source strings needed to be reversed as the original string in 
+argv was being attempting to be overwritten by whatever was
+contained in stringBuffer. The fix for this error would be to 
+switch stringBuffer and argv[] to have the correct source and 
+destination strings.
+
+Error #5 ( Line 52 ):
+
+Next, gbd found that the printf which printed the reversed string 
+was null instead of the string. This is caused by the string being
+passed incorrectly to the %s by using the *stringbuffer instead of
+just stringbuffer. The fix for this would be to remove the * to pass
+in the correct variable for the %s operator.
+
+Error #6 ( Line 70 ):
+
+The last error that was found was conatined in the function reverseIt.
+The problem that the program encounters is that the stop variable is
+counting one more than it should. This is because it is taking into
+account the terminating character when it shouldn't be. The fix for
+this error is to simply remove the +1 at the end of the line.
+

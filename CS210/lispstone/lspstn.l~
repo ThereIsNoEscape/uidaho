@@ -1,0 +1,350 @@
+;;; Jonathan Buch, CS 210 HW#2, September 15th, 2015
+
+;; Card Attributes ( cost, spellp, name, attack, health, special )
+
+(defun gamestate()
+	(setq PlayerHealth 30)
+	(setq AIHealth 30)
+	(setq Hand '(
+		(1 nil "C slug" 1 1 0)
+		(1 nil "int" 1 1 0)
+		(1 t   "++" 0 1 0)
+		(1 t   "^=" 4 0 0)
+		(2 nil "for (;;)" 2 2 0)
+		(3 nil "switch" 3 3 0)
+		(4 nil "array a[100]" 4 4 0)
+		(4 t   "Bus Error Fireball" 6 0 0)
+	))
+	(setq AIHand '(
+		(1 nil "Atom" 1 1 0)
+		(1 t   "Car" 0 2 0)
+		(1 t   "Cdr" 2 0 0);
+		(1 nil "Parenthesis" 1 1 0)
+		(2 nil "Cons Cell" 2 1 0)
+		(3 nil "defun" 3 2 0)
+		(4 t   "Mapcar" 4 0 0)
+		(4 nil "Lisp Monster" 2 6 0)
+	))
+	(setq MinIndx 0)
+	(setq MonIndx 0)
+	(setq Minions '()
+	)
+	(setq Monsters '()
+	)
+	(setq turn 1)
+)
+
+(defun gloop()
+	(loop
+		(progn
+			(if (eq PlayerHealth 0)
+				(printDeath 1)) 
+			(if (eq AIHealth 0)
+				(printDeath 0))
+			(setq energy turn)
+			(prntst)	
+			(PlayerTurn)
+			(prntst)
+			(ResetAttackedStatus Minions)	
+			(setq energy turn)
+			(AITurn)
+			(prntst)
+			(ResetAttackedStatus Monsters)
+			(setq turn (+ 1 turn))
+		)
+	)
+)
+
+;; PlayCard - Checks if the string of the name of the card of you want to play
+;; is in your hand, then checks if you have enough energy to play it, and then
+;; finally "plays" the card. This function subtracts energy, removes a card from
+;; the hand, and updates the board.
+
+(defun promptedread(s) (format t "~a: " s) (read))
+
+(defun PlayCard()
+	(progn
+		(setq CardName (promptedread "Enter the name of the card you want to play"))
+		(if (returnCard Hand CardName)
+			(progn
+				(format t "Checking Energy...~%" nil)
+				(if (chkEnergy (returnCard Hand CardName) energy)
+					(progn
+						(format t "You have enough energy!~%" nil)
+						(if (IsMonster (returnCard Hand CardName))
+							(progn
+								(format t "Playing a minion...~%" nil)
+								(AddMin (returnCard Hand CardName) Minions)
+								(format t "Added to minions~%" nil)
+								(setq energy (- energy (returnCost (returnCard Hand CardName))))
+								(format t "Setting your energy lower~%" nil)
+								(setq Hand (RmvHnd Hand (returnCard Hand CardName)))
+								(format t "Removed used card from hand~%" nil)
+							)
+							(progn
+								(setq TargetName (promptedread "Enter the name of the card you want to target"))
+								(if (IsOnBoard TargetName Minions Monsters)
+									(progn
+										(if (> (returnAttk (returnCard Hand CardName)) 0)
+											(ChangeHealth (returnCard Monsters TargetName) (- 0 (returnAttk (returnCard Hand CardName))))
+										)
+										(if (> (returnHealth (returnCard Hand CardName)) 0)
+											(ChangeHealth (returnCard Minions TargetName) (returnHealth (returnCard Hand CardName)))
+										)
+										(setq energy (- energy (returnCost (returnCard Hand CardName))))
+										(format t "Setting your energy lower~%" nil)
+										(setq Hand (RmvHnd Hand (returnCard Hand CardName)))
+										(format t "Removing used card from hand~%" nil)
+									)
+									(format t "Invalid Target~%" nil)
+								)
+							)
+						)
+					)
+					(format t "Not Enough Energy~%" nil)
+				)
+			)
+			(format t "Not a Valid Card~%" nil)
+		)
+	)
+)
+
+; Checks if the supplied card name is in the player's hand (Returns t if exists)
+
+(defun returnCard(LoL CardName)
+	(if (null LoL) nil
+		(if (equalp (nth 2 (car LoL)) CardName)
+			(progn
+				(format t "Found Card~%~a~%" (car LoL))
+				(car LoL)
+			)
+			(returnCard (cdr LoL) CardName)
+		)
+	)
+)
+
+; Checks if "ELEMENT 2" is nil or t	(Returns t if exists)
+
+(defun IsMonster(CardL)
+	(progn
+		(format t "Is it a monster?~% ~a~%" (nth 1 CardL))
+		(if (equalp (nth 1 CardL) nil) t
+			nil
+		)
+	)
+)
+
+; Subtracts Energy from the player or AI based on their current energy
+
+(defun chkEnergy(CardL x)
+	(progn
+		(format t "~a~%" (nth 0 CardL))
+		(if (<= (car CardL) x) 
+			(progn
+				(format t "You have enough energy1!~%" nil)
+				t
+			)
+			nil
+		)
+	)
+)
+
+(defun remEnergy(cost energy)
+	(- energy cost)
+)
+
+(defun returnCost(CardL)
+	(progn
+		(format t "In Cost~%~a~%" (car CardL))
+		(car CardL)
+	)
+)
+
+(defun returnHealth(CardL)
+	(progn
+		(format t "In Health~%~a~%" (nth 4 CardL))
+		(nth 4 CardL)
+	)
+)
+
+(defun returnAttk(CardL)
+	(progn
+		(format t "In Attk~%~a~%" (nth 3 CardL))
+		(nth 3 CardL)
+	)
+)
+
+
+; Remove a card from either Hand or AIHand
+
+(defun RmvHnd(LoL CardL)
+	(if (null LoL) nil
+		(remove CardL LoL))
+)
+
+; Adds a card to either the minions or monster lists
+
+(defun AddMin(CardL LoL)
+	(progn
+		(format t "~a~%~a~%" LoL CardL)
+		(+ 1 MinIndx)
+		(setq Minions (cons CardL (nthcdr MinIndx LoL)))
+	)
+)
+
+; Checks both minions and monsters lists in an attempt to find the card
+
+(defun IsOnBoard(CardL MinionsL MonstersL)
+	(progn
+		(format t "Checking Board...~%" nil)
+		(if (and (null MinionsL) (null MonstersL)) nil
+			(if (or (find CardL MinionsL) (find CardL MonstersL)) t
+				nil
+			) 
+		)
+	)
+)
+
+; Replaces a value, "ELEMENT 5" based on attack of Monster or Damage/Healing from a spell
+
+(defun ChangeHealth(CardL Change)
+	(progn
+		(format t "Changing health of ~a by ~a!~%" (nth 2 CardL) change)
+		(setf (nth 4 CardL) (+ (nth 4 CardL) Change))
+	)
+)  
+
+(defun ResetAttackedStatus(LoL)
+	(if (null LoL) nil
+		(progn
+			(setf (nth 6 (car LoL)) 0)
+			(ResetAttackedStatus (cdr LoL))
+		)
+	)
+)
+
+(defun CheckAttackedStatus(CardL)
+	(if (= (nth 6 CardL) 0)
+		(progn
+			(format t "~a attacked!~%" (nth 2 CardL))
+			(setf (nth 6 CardL) 1)
+			(t)
+		)
+		(progn
+			(format t "~a attacked already!~%" (nth 2 CardL))
+			(nil)
+		)
+	)
+)
+
+
+;; PlayAICard - Differences between this and PlayCard: Find highest playable energy
+;; card in AIHand, plays the card once found, and loops until no more cards are
+;; playable.
+
+;(defun PlayAICard(L)
+;	(if (null L) nil
+;
+;	)
+;)
+
+
+
+;; Attack - This function takes a string of a minion that is currently on the board
+;; as well as a string of the monster or AI that the player commands it to attack. 
+;; This function should, upon minion attack, to update the health of any damaged minions.
+;; If a minion or monster has a 1 in the 6th slot of their card, Attacks from the 
+;; opponent should only be valid against that target.
+
+(defun Attack()
+	(if (null Minions) (format t "No Minions to attack with ~%" nil)
+		(progn
+			(setq Attacker (promptedread "Choose minion you want to attack with "))
+			(IsOnBoard (returnCard Minions Attacker) Minions Monsters)
+				(if (CheckAttackedStatus (returnCard Minions Attacker)) 
+					(if (null Monsters) (setq AIHealth (- AIHealth (returnAttk (returnCard Minions Attacker)))) 
+						(progn
+							(setq Defender (promptedread "Choose a minion or the AI valid to attack "))
+							(if (IsOnBoard Defender Minions Monsters)
+								(progn
+									(ChangeHealth (returnCard Monsters Defender) (- 0 (returnAttk (returnCard Minions Attacker))))
+									(format t "Changing health of ~a by -~a~%" Defender (returnAttk (returnCard Minions Attacker)))
+									(ChangeHealth (returnCard Minions Attacker) (- 0 (returnAttk (returnCard Monsters Defender))))
+									(format t "Changing health of ~a by -~a~%" Attacker (returnAttk (returnCard Monsters Defender)))
+								)
+								(if (equalp Defender "AI")
+									(progn
+										(setq AIHealth (- AIHealth (returnAttk (returnCard Minions Attacker))))
+										(format t "~a attacked AI for ~a damage!~%" Attacker (returnAttk (returnCard Minions Attacker)))
+									)
+									(format t "Not a valid target~%" nil)
+								)
+							)
+						)
+						(format t "~a attacked AI for ~a damage!~%" Attacker (returnAttk (returnCard Minions Attacker)))
+					)
+				)
+			)
+		)
+	)
+)
+
+;; AIAttack - Differences between this and Attack: AI attacks with all ready monsters
+;; at any valid target chosen randomly.  
+
+;(defun AIAttack(monster minion)
+;	()
+;)
+
+; Prints state of the game
+(defun prntst()
+	(progn
+		(format t "PlayerHealth ~a~%" PlayerHealth)
+		(format t "AIHealth = ~a~%" AIHealth)
+		(format t "Turn =  ~a~%" turn)
+		(format t "Energy = ~a~%" energy)
+		(format t "Hand = ~a~%" Hand)
+		(format t "AIHand = ~a~%" AIHand)
+		(format t "Minions = ~a~%" Minions)
+		(format t "Monsters = ~a~%" Monsters)
+	)
+)
+
+(defun printDeath(x)
+	(if (eq x 1)
+		(progn
+			(print "The Player died. AI is victorious" *standard-output*)
+			(exit)
+		)
+	)
+	(if (eq x 0)
+		(progn
+			(print "The AI died. Player is victorious" *standard-output*)
+			(exit)
+		)
+	)
+)
+
+; Player Turn
+(defun PlayerTurn()
+	(setq Choice (promptedread "Enter (1)Quit (2)Attack (3)Play Card (4)End Turn"))
+	(cond
+		((= Choice 1)(exit))
+		((= Choice 2)(Attack))
+		((= Choice 3)(PlayCard))
+		((= Choice 4)(return-from PlayerTurn nil))
+	)
+	(prntst)
+	(PlayerTurn)
+)
+
+; AI Turn
+(defun AITurn()
+;	(case (3)
+;		(1 (AIAttack))
+;		(2 (PlayAICard))
+	(return-from AITurn nil)
+;	)	
+;	(AITurn)
+)
+

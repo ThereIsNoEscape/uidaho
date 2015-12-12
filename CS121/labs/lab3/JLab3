@@ -1,0 +1,22 @@
+Jonathan Buch
+Section #1
+Lab #3
+February 5th, 2015
+
+Difficulties/Obstacles:
+
+The main difficulty of this lab was getting the array to check the left element if it was a 1 before it
+was rewritten by the rule that converted 1 to 0s. This took me quite some time, around an hour, before I
+realized that using 2 different arrays, one for reading and the other for writting, would solve my problem.
+After I had fixed that, the next barrier I had to overcome was how to use infile correctly so I can read 
+in a sample file. This took me a good 45 minutes to complete as I am not well versed in how fstream works.
+It would have been much shorter had I known how to use file input correctly. Other than those two problems,
+I really didn't have any other troubles with the lab.
+
+Lessons Learned:
+
+I learned how to bypass the problem of overwriting a value before it could be checked correctly. I also learned
+how to write arrays over one another via pointers. By using pointers in thislab, I learned how to use pointers
+when dealing with arrays. The next main lesson I learned was how to use ifstream and how to read from a file.
+This lab helped me a lot with understanding how file input works and how it is used.
+

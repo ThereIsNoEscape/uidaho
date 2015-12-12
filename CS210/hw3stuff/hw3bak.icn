@@ -1,0 +1,71 @@
+# Jonathan Buch CS210 hw3.icn October 1st, 2015
+
+procedure main(fname)
+	while not fname[1] do{
+		write("Need a file name to open: ")
+		fname := read()
+	}
+	write("File Name = " || fname)
+
+	dbllttrw := openblah(fname) | stop("Unable to open specified file.")
+	dbllttrw := sort(dbllttrw)
+
+	dict := openblah("/usr/share/dict/words") | openblah("/usr/dict/words") | stop("Couldn't find dictionary.") 
+	
+	checked := []
+
+	every dbl := !dbllttrw do {
+		if search(checked, dbl) = 0 then {
+			count := search(dbllttrw, dbl)
+			put(checked, dbl)
+			if search(dict, dbl) = 0 then {
+				write(dbl, " ", count, " *")
+			}
+			else {
+				write(dbl, " ", count)
+			}
+		}
+	}
+end
+
+procedure search(list, word)
+	count := 0
+	every check := !list do {
+		if word == check then {
+			count := count + 1
+		}
+	}
+	return count
+end
+
+procedure openblah(fname)
+	wordDef := &letters ++ &digits ++ '\'-'
+	if file := open(fname) then {
+		words := []
+		while strings := read(file) do {
+			strings ? {
+				while tab(upto(wordDef)) do {
+					word := tab(many(wordDef))
+					word ? {
+						c := move(1)
+						while c2 := move(1) do {
+							if c2 == c then {
+								if fname == "dict" then {
+									put(words, map(word))
+									break
+								}
+								else {
+									put(words, word)
+									break
+								}
+							}
+							else c := c2
+						}
+					}
+				}
+			}
+		}
+		close(file)
+	}
+	return words
+end

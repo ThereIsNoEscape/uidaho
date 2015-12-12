@@ -1,0 +1,38 @@
+Remember to add an if statement to main that checks if the string is a variable or an
+operator, a switch could be useful.
+
+Stacks only need to add from the front.
+
+Don't forget that there is no deleting nodes for this program as it seems to just be
+adding and pushing the stack back.
+
+Use the base sample code to get the necessary code for the basics, then
+move on to adding the requirements.
+
+Print the top of the stack at the beginning, before the user is able to input.
+
+The required operations other than the basics are sq, sqrt, dup, swap, ps, quit.
+
+All numbers are doubles.
+
+Use error checking. NOTE: Mostly on the input of strings on the extra operations.
+
+sq = v * v
+sqrt = ?
+dup = v + 1 node of v on top of stack
+swap = swap elements 1 and 2 of the stack
+ps = print function that prints the values of all of the elements of the stacks
+quit = return 0
+
+THINGS TO SOLVE:
+
+Get the input as strings before converting them to doubles if the arey numbers (atod)?
+
+If they are strings, figure out how to make special cases for each of the different
+cases. (DON'T PUT THE OPERATORS ON THE STACK!!!)
+
+The necessary functions for a stack. (wait for lecture about this)
+
+Ask about the number of values that can be put in a function before an operator is
+required. (2, 3, ?)
+

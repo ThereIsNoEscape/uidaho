@@ -1,0 +1,35 @@
+int *p;
+p = new int;
+int num;
+cin >> num;
+for(int i = 0; i < num; i++){
+	p = new int;
+}
+// Linked List
+node object;
+node *(name);
+node *next;		// Points to another node object
+int data;
+
+Dynamic Data Structure
+head->node object->node object->etc;
+
+class node{
+	private:
+		int data;	// robot *data;
+		nod *next;	// left, right
+	public:
+		void set_data(int x) {data = x;}
+		int get_data() {return data;}
+		void set_next(node *n) {next = n;}
+		node *get_next() {return next;}
+};
+
+int main(){
+	node n7, n8;
+	n7.set_next(&n8);
+	node *p;
+	p = new node;
+	n8.set_next(p);		// & is unneeded as p is a pointer already
+}
+

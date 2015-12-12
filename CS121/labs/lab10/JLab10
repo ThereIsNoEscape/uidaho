@@ -1,0 +1,38 @@
+Jonathan Buch
+Section #1
+Lab #10
+April 9th, 2015
+
+Journal
+
+Difficulties/Time Required:
+
+I felt that this lab was quite interesting even though it was somewhat
+challenging. The main problem I had was being able to overwrite the
+original arrays with the updated values. It required me to draw a
+picture to better understand how to implement the filters as the picture
+helped me visualize what the code needed to be. Other than that, the only
+other difficult part was changing my stack class to a general linked list
+class and that only took me about half an hour. Since I didn't encounter
+too many problems encountered while completing this lab, it only took me
+about 5 hours to fully complete. The majority of the time, ~4 hours, was
+spent figuring out and implementing the functions to filter the arrays 
+and linked lists. The other hour was spent changing my stack class to a
+general linked list class and finishing the journal.
+
+Lessons Learned:
+
+From this lab I learned that you cannot 100% remove an element out of a
+static array as it already has a defined amount of memory allocated for it.
+The other thing I learned from this lab is that arrays are easier to access
+data, but linked lists make it easier to completly delete data and release 
+the memory.
+
+Question 4 Answer:
+
+I feel that it is possible to implement, but with the knowledge I currently
+possess, I cannot think of a single way to implement all of the functions I 
+created into just one function. All of the functions that I created for this
+lab were very similar in composition, just with a few parameters changed to 
+do what the function was required to do which makes me believe that it is 
+completely possible to implement one function. 
