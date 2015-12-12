@@ -1,0 +1,28 @@
+class Submenu()
+end
+
+class Game_State()
+end
+
+class New_Game_Menu()
+    selectRace ()
+    selectClass ()
+    selectMode ()
+end
+
+class Buttons()
+    accessMenuOptions ()
+end
+
+class Main_Menu()
+    newGame ()
+    closeGame ()
+    joinGame ()
+    loadGame ()
+end
+
+class Save_File()
+    save ()
+    load ()
+end
+

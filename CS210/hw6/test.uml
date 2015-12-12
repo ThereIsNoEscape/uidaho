@@ -1,24 +1,45 @@
 @startuml
-title Look at Map 
-
+title State Subsystem Class Diagram
 legend left
-	Created by: Quintana Quetzlcoatl
-	Reviewed: 
-
-	Map will display the location for stuff around the player and the world 
-
-	
+Authored: Lady Galadriel, Celeborn Consort
+Reviewed: <i>none</i>
+External Classes:
+Definitions:
+<i>Accesses</i> - Class A <i>accesses</i> class B when class A calls 
+a method of class B's
+requesting read-write access.
+<i>Commands</i> - Class A <i>changes</i> class B when class A 
+changes information stored
+in class B.
 endlegend
-
-class Map{
-        PlayerLocation : (X,Y)
-	QuestLocation : (X,Y)
-	EnterMapLocation : (X,Y)
-        ExitMapLocation : (X,Y)
-        SavePointLocation : (X,Y)
-        DisplayMap() 
-}  
-
-  note left: SavePoint might be removed and added to the setting the group not sure yet
-
+class Buttons {
++ accessMenuOptions()
+}
+class "Main Menu" {
++ closeGame()
++ newGame()
++ loadGame()
++ joinGame()
+}
+class Submenu {
+}
+class "Save File" {
++ save()
++ load()
+}
+class "New Game Menu" {
++ selectClass()
++ selectRace()
++ selectMode()
+}
+class "Game State" {
+}
+Buttons -up-* "Main Menu"
+Buttons -up-* "Submenu"
+Buttons -up-* "New Game Menu"
+"Main Menu" <|-left- "Submenu"
+"Main Menu" <|-right- "New Game Menu"
+Submenu "Accesses" -down- "Save File"
+"Save File" "Changes" -down- "Game State"
+"New Game Menu" "Changes" -down- "Game State"
 @enduml
