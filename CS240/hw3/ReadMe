@@ -1,0 +1,9 @@
+Jonathan Buch
+Prof. Krings
+Assignment #3
+March 30th, 2016
+ReadMe.txt
+
+To compile hw3.c, you need to just use gcc compiler on hw3.c.
+As of right now, the only function that does't work is .mshrc
+as it keeps getting stuck in an infinite loop.
